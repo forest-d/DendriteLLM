@@ -103,22 +103,6 @@ function SettingsView() {
             </div>
           </div>
         </div>
-
-        <div>
-          <h2 className="text-lg font-semibold mb-4">About</h2>
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-            <h3 className="font-medium mb-2">DendriteLLM Interface</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-              Transform linear AI conversations into navigable tree structures.
-            </p>
-            <p className="text-xs text-gray-500 mb-2">
-              All conversations are stored locally in your browser. No data is sent to external servers except for API calls to Anthropic.
-            </p>
-            <p className="text-xs text-gray-500">
-              <strong>Supported Models:</strong> Claude 4 (Sonnet/Opus), Claude 3.7, Claude 3.5 (Sonnet/Haiku), Claude 3 (Opus/Sonnet/Haiku), and Claude 2.x
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
