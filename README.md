@@ -1,4 +1,4 @@
-# DendriteLLM Interface
+# DendriteLLM
 
 Application for tree-based conversations with LLMs, solving the context rot problem where conversations become unfocused due to tangents and accumulated junk. Create branches, explore different conversation paths, and maintain clean context isolation throughout your AI interactions.
 
