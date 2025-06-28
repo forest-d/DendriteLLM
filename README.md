@@ -2,7 +2,7 @@
 
 Application for tree-based conversations with LLMs, solving the context rot problem where conversations become unfocused due to tangents and accumulated junk. Create branches, explore different conversation paths, and maintain clean context isolation throughout your AI interactions.
 
-## ✨ Features
+## Features
 
 ### Core Functionality
 - **Tree Conversations**: Transform linear chats into navigable tree structures with visual branching
@@ -143,9 +143,3 @@ ConversationNode {
 
 ### CORS Configuration
 Development server includes automatic proxy configuration for Claude API calls, eliminating CORS issues during development.
-
-## 🔒 Privacy & Security
-
-- **Local-First**: All conversations stored exclusively in your browser
-- **Secure Storage**: API keys stored in localStorage, never transmitted except to Anthropic
-- **No Tracking**: Zero telemetry, analytics, or external data collection
