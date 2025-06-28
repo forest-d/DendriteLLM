@@ -3,6 +3,7 @@ import { useConversationStore } from '../store';
 import { Sidebar } from './Sidebar';
 import { ChatInterface } from './ChatInterface';
 import { TreeView } from './TreeView';
+import { SplitView } from './SplitView';
 
 function SettingsView() {
   const { apiSettings, updateApiSettings } = useConversationStore();
@@ -41,10 +42,31 @@ function SettingsView() {
                 onChange={(e) => updateApiSettings({ model: e.target.value })}
                 className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
               >
-                <option value="claude-3-sonnet-20240229">Claude 3 Sonnet</option>
-                <option value="claude-3-opus-20240229">Claude 3 Opus</option>
-                <option value="claude-3-haiku-20240307">Claude 3 Haiku</option>
+                <optgroup label="Claude 4 (Latest)">
+                  <option value="claude-sonnet-4-20250514">Claude Sonnet 4</option>
+                  <option value="claude-opus-4-20250514">Claude Opus 4</option>
+                </optgroup>
+                <optgroup label="Claude 3.7">
+                  <option value="claude-3-7-sonnet-20250219">Claude Sonnet 3.7</option>
+                </optgroup>
+                <optgroup label="Claude 3.5">
+                  <option value="claude-3-5-sonnet-20241022">Claude Sonnet 3.5 (New)</option>
+                  <option value="claude-3-5-haiku-20241022">Claude Haiku 3.5</option>
+                  <option value="claude-3-5-sonnet-20240620">Claude Sonnet 3.5 (Old)</option>
+                </optgroup>
+                <optgroup label="Claude 3">
+                  <option value="claude-3-opus-20240229">Claude Opus 3</option>
+                  <option value="claude-3-sonnet-20240229">Claude Sonnet 3</option>
+                  <option value="claude-3-haiku-20240307">Claude Haiku 3</option>
+                </optgroup>
+                <optgroup label="Claude 2 (Legacy)">
+                  <option value="claude-2.1">Claude 2.1</option>
+                  <option value="claude-2.0">Claude 2.0</option>
+                </optgroup>
               </select>
+              <p className="text-xs text-gray-500 mt-1">
+                Newer models generally offer better performance and capabilities.
+              </p>
             </div>
 
             <div>
@@ -89,8 +111,11 @@ function SettingsView() {
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               Transform linear AI conversations into navigable tree structures.
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-500 mb-2">
               All conversations are stored locally in your browser. No data is sent to external servers except for API calls to Anthropic.
+            </p>
+            <p className="text-xs text-gray-500">
+              <strong>Supported Models:</strong> Claude 4 (Sonnet/Opus), Claude 3.7, Claude 3.5 (Sonnet/Haiku), Claude 3 (Opus/Sonnet/Haiku), and Claude 2.x
             </p>
           </div>
         </div>
@@ -108,6 +133,8 @@ export function Layout() {
         return <ChatInterface />;
       case 'tree':
         return <TreeView />;
+      case 'split':
+        return <SplitView />;
       case 'settings':
         return <SettingsView />;
       default:

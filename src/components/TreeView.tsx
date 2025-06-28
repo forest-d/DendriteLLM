@@ -531,29 +531,6 @@ function TreeViewContent() {
           />
         </ReactFlow>
       </div>
-      
-      {/* Legend */}
-      <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-3 border border-gray-200 dark:border-gray-700">
-        <h3 className="text-sm font-semibold mb-2">Legend</h3>
-        <div className="space-y-1 text-xs">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-purple-100 border-2 border-purple-400 rounded"></div>
-            <span>Root Node</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-green-100 border-2 border-green-400 rounded"></div>
-            <span>Current Path</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-blue-100 border-2 border-blue-500 rounded"></div>
-            <span>Selected Node</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-gray-100 border-2 border-gray-300 rounded"></div>
-            <span>Other Nodes</span>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

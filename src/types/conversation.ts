@@ -51,7 +51,7 @@ export interface TreeViewport {
 }
 
 export interface UIState {
-  currentView: 'chat' | 'tree' | 'settings';
+  currentView: 'chat' | 'tree' | 'split' | 'settings';
   sidebarCollapsed: boolean;
   treeViewport: TreeViewport;
   selectedNodeId: string | null;

@@ -27,7 +27,7 @@ interface ConversationStore extends AppState {
   switchBranchOnly: (branchId: string) => void;
   
   // UI state
-  setCurrentView: (view: 'chat' | 'tree' | 'settings') => void;
+  setCurrentView: (view: 'chat' | 'tree' | 'split' | 'settings') => void;
   toggleSidebar: () => void;
   setTreeViewport: (x: number, y: number, zoom: number) => void;
   setSelectedNode: (nodeId: string | null) => void;
@@ -53,7 +53,7 @@ const initialUIState: UIState = {
 
 const initialAPISettings: APISettings = {
   anthropicApiKey: '',
-  model: 'claude-3-sonnet-20240229',
+  model: 'claude-sonnet-4-20250514',
   temperature: 0.7,
   maxTokens: 4000,
 };

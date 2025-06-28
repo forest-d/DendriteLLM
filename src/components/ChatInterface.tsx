@@ -71,6 +71,7 @@ export function ChatInterface() {
     selectBranch,
     setCurrentView,
     setSelectedNode,
+    uiState,
   } = useConversationStore();
 
   const conversationPath = getCurrentPath();
@@ -185,7 +186,10 @@ export function ChatInterface() {
     
     navigateToNode(nodeId);
     setSelectedNode(nodeId);
-    setCurrentView('tree');
+    
+    if (uiState.currentView !== 'split') {
+      setCurrentView('tree');
+    }
   };
 
   if (!currentTree) {

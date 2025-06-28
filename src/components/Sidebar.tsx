@@ -7,7 +7,8 @@ import {
   Trash2, 
   Edit3,
   ChevronLeft,
-  ChevronRight 
+  ChevronRight,
+  Columns2
 } from 'lucide-react';
 import { useConversationStore } from '../store';
 
@@ -98,6 +99,17 @@ export function Sidebar() {
           </button>
           
           <button
+            onClick={() => setCurrentView('split')}
+            className={`p-2 rounded-lg transition-colors ${
+              uiState.currentView === 'split'
+                ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
+                : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+            }`}
+          >
+            <Columns2 className="w-5 h-5" />
+          </button>
+          
+          <button
             onClick={() => setCurrentView('settings')}
             className={`p-2 rounded-lg transition-colors ${
               uiState.currentView === 'settings'
@@ -113,7 +125,7 @@ export function Sidebar() {
   }
 
   return (
-    <div className="w-80 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+    <div className="w-96 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 flex flex-col">
       {/* Header */}
       <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
         <h2 className="text-lg font-semibold">DendriteLLM</h2>
@@ -130,38 +142,50 @@ export function Sidebar() {
         <div className="flex space-x-1">
           <button
             onClick={() => setCurrentView('chat')}
-            className={`flex-1 flex items-center justify-center space-x-2 py-2 px-3 rounded-lg transition-colors ${
+            className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg transition-colors ${
               uiState.currentView === 'chat'
                 ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
                 : 'hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
+            title="Chat View"
           >
             <MessageSquare className="w-4 h-4" />
-            <span className="text-sm">Chat</span>
           </button>
           
           <button
             onClick={() => setCurrentView('tree')}
-            className={`flex-1 flex items-center justify-center space-x-2 py-2 px-3 rounded-lg transition-colors ${
+            className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg transition-colors ${
               uiState.currentView === 'tree'
                 ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
                 : 'hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
+            title="Tree View"
           >
             <GitBranch className="w-4 h-4" />
-            <span className="text-sm">Tree</span>
+          </button>
+          
+          <button
+            onClick={() => setCurrentView('split')}
+            className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg transition-colors ${
+              uiState.currentView === 'split'
+                ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
+                : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+            }`}
+            title="Split View"
+          >
+            <Columns2 className="w-4 h-4" />
           </button>
           
           <button
             onClick={() => setCurrentView('settings')}
-            className={`flex-1 flex items-center justify-center space-x-2 py-2 px-3 rounded-lg transition-colors ${
+            className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg transition-colors ${
               uiState.currentView === 'settings'
                 ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
                 : 'hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
+            title="Settings"
           >
             <Settings className="w-4 h-4" />
-            <span className="text-sm">Settings</span>
           </button>
         </div>
       </div>
