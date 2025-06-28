@@ -1,6 +1,6 @@
 # DendriteLLM Interface
 
-A powerful web application that transforms linear AI chat conversations into navigable tree structures, solving the "context rot" problem where conversations become unfocused due to tangents and accumulated information. Create branches, explore different conversation paths, and maintain clean context isolation throughout your AI interactions.
+Application for tree-based conversations with LLMs, solving the context rot problem where conversations become unfocused due to tangents and accumulated junk. Create branches, explore different conversation paths, and maintain clean context isolation throughout your AI interactions.
 
 ## ✨ Features
 
@@ -12,7 +12,7 @@ A powerful web application that transforms linear AI chat conversations into nav
 - **Persistent State**: All conversations and UI states preserved locally for privacy
 - **Claude Integration**: Direct integration with Anthropic's Claude API
 
-## 🛠 Tech Stack
+## Stack
 
 - **Frontend**: React 18 + TypeScript + Vite
 - **Styling**: Tailwind CSS with dark mode support
@@ -22,13 +22,13 @@ A powerful web application that transforms linear AI chat conversations into nav
 - **Icons**: Lucide React icon library
 - **API**: Direct Anthropic Claude API integration with CORS proxy
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Node.js 18+** (tested with Node.js 20.3.0+)
 - **npm or yarn** package manager
 - **Anthropic API key** (for Claude integration)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -58,7 +58,7 @@ Navigate to `http://localhost:5173`
 3. **Start Chatting**: Create a new tree or continue from demo branches
 4. **Explore Tree View**: Switch between Chat and Tree views to see your conversation structure
 
-## 🏗 Building & Deployment
+## Building & Deployment
 
 ### Development Build
 ```bash
@@ -76,7 +76,7 @@ npm run typecheck    # TypeScript type checking
 ### Production
 The app builds to static files in `dist/` directory, suitable for any static hosting service (Netlify, Vercel, GitHub Pages, etc.).
 
-## 💡 Usage Guide
+## Usage Guide
 
 ### Creating Conversation Trees
 
@@ -91,9 +91,9 @@ The app builds to static files in `dist/` directory, suitable for any static hos
 
 ### View Navigation
 
-- **💬 Chat View**: Traditional linear chat showing current conversation path
-- **🌳 Tree View**: Interactive visual map of your entire conversation structure  
-- **⚙️ Settings**: API configuration and app preferences
+- **Chat View**: Traditional linear chat showing current conversation path
+- **Tree View**: Interactive visual map of your entire conversation structure  
+- **⚙Settings**: API configuration and app preferences
 
 ### Tree Interaction
 
@@ -103,7 +103,7 @@ The app builds to static files in `dist/` directory, suitable for any static hos
 - **Zoom/Pan**: Navigate large conversation trees easily
 - **Tree Navigation Buttons**: Click tree icons in chat bubbles to locate messages in tree view
 
-## 🏛 Architecture
+## Architecture
 
 ### Data Structure
 ```typescript
@@ -128,27 +128,7 @@ ConversationNode {
 - **Viewport State**: Pan/zoom positions preserved across sessions
 - **Branch Context**: Clean context isolation per conversation path
 
-## 📁 Project Structure
-
-```
-src/
-├── components/              # React components
-│   ├── ChatInterface.tsx       # Main chat UI with message bubbles
-│   ├── TreeView.tsx           # Interactive React Flow tree visualization
-│   ├── Sidebar.tsx            # Navigation and tree management
-│   ├── Settings.tsx           # API configuration panel
-│   └── Layout.tsx             # App layout wrapper
-├── store/                   # State management
-│   └── conversationStore.ts    # Zustand store with persistence
-├── types/                   # TypeScript definitions
-│   └── conversation.ts         # Core data structures
-├── utils/                   # Utility functions
-│   ├── treeUtils.ts            # Tree manipulation utilities
-│   └── demoData.ts            # StarCraft demo tree data
-└── App.tsx                  # Main application component
-```
-
-## 🔧 Configuration
+## Configuration
 
 ### API Setup
 1. **Settings Panel**: Click gear icon in sidebar
